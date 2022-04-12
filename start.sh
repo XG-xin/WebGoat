@@ -47,6 +47,3 @@ commandline_args=("$@")
 webgoat &
 write_start_message &
 tail_log_file
-
-
-
