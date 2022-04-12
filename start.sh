@@ -3,7 +3,7 @@
 cd /home/webgoat 
 
 function webgoat() {
-  echo "Starting WebGoat...."
+  echo "Starting WebGoat......"
   java \
    -Duser.home=/home/webgoat \
    -Dfile.encoding=UTF-8 \
