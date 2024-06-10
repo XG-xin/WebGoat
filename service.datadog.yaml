@@ -1,0 +1,14 @@
+schema-version: v2.2
+dd-service: test-service
+team: xinyuan
+application: test-application
+links:
+  - type: repo
+    name: Source
+    url: https://github.com/XG-xin/WebGoat
+    provider: github
+tags:
+  - bg:csr
+type: custom
+languages:
+  - python
