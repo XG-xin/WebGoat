@@ -70,3 +70,11 @@ jobs:
               restore-keys: ubuntu-latest-m2-
         - name: Test with Maven
           run: mvn --no-transfer-progress verify
+        - uses: arcxp/datadog-service-catalog-metadata-provider@v2
+          with:
+            schema-version: v2.2
+            datadog-hostname: api.datadoghq.com
+            datadog-key: ${{ secrets.DATADOG_API_KEY }}
+            datadog-app-key: ${{ secrets.DATADOG_APP_KEY }}
+            service-name: pao-test-deployment
+            team: vr
