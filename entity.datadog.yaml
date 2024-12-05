@@ -6,8 +6,9 @@ spec:
   components:
     - service:django-celery-app
     - service:postgres
-    - queue:redis
+    - datastore:redis
     - datastore:defaultdb
+    - datastore:django-celery-db
 metadata:
   name: my-django-celery-app
   owner: app-team
@@ -32,7 +33,12 @@ metadata:
       type: operator
 ---
 apiVersion: v3
-kind: queue
+kind: datastore
+metadata:
+  name: django-celery-db
+---
+apiVersion: v3
+kind: datastore
 metadata:
   name: redis
 ---
