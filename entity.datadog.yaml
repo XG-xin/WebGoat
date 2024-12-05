@@ -1,0 +1,33 @@
+apiVersion: v3
+kind: system
+spec:
+  lifecycle: production
+  tier: critical
+  components:
+    - service:django-celery-app
+    - queue:redis
+    - datastore:django-celery-db
+metadata:
+  name: my-django-celery-app
+  owner: app-team
+  additionalOwners:
+    - name: database-team
+      type: operator
+---
+apiVersion: v3
+kind: datastore
+metadata:
+  name: django-celery-db
+  additionalOwners:
+    - name: db-team
+      type: operator
+---
+apiVersion: v3
+kind: service
+metadata:
+  name: django-celery-app
+---
+apiVersion: v3
+kind: queue
+metadata:
+  name: redis
