@@ -5,8 +5,9 @@ spec:
   tier: critical
   components:
     - service:django-celery-app
+    - service:postgres
     - queue:redis
-    - datastore:django-celery-db
+    - datastore:defaultdb
 metadata:
   name: my-django-celery-app
   owner: app-team
@@ -17,7 +18,7 @@ metadata:
 apiVersion: v3
 kind: datastore
 metadata:
-  name: django-celery-db
+  name: defaultdb
   additionalOwners:
     - name: db-team
       type: operator
@@ -26,8 +27,16 @@ apiVersion: v3
 kind: service
 metadata:
   name: django-celery-app
+  additionalOwners:
+    - name: app-team
+      type: operator
 ---
 apiVersion: v3
 kind: queue
 metadata:
   name: redis
+---
+apiVersion: v3
+kind: service
+metadata:
+  name: postgres
