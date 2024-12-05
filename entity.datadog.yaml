@@ -23,6 +23,7 @@ metadata:
   additionalOwners:
     - name: db-team
       type: operator
+inheritFrom:system:my-django-celery-app
 ---
 apiVersion: v3
 kind: service
