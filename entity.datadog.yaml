@@ -34,6 +34,10 @@ metadata:
   additionalOwners:
     - name: app-team
       type: operator
+  links:
+    - type: dashboard
+      name: Test Dashboard - Service definition
+      url: https://app.datadoghq.com/dashboard/p2k-bh9-5s3
 ---
 apiVersion: v3
 kind: datastore
